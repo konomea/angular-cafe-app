@@ -1,0 +1,7 @@
+.component-container {
+    background-image: url("../../../assets/images/backdrop.jpg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
