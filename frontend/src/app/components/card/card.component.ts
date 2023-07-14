@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
-import { Drink } from '../../../models/drink.model';
+import { Drink } from '../../../../../backend/models/drink.model';
 
 @Component({
   selector: 'app-card',

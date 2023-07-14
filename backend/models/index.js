@@ -23,6 +23,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.drinks = require("./drink.model.js")(sequelize, Sequelize);
+db.drinks = require("./drink.model")(sequelize, Sequelize);
 
 module.exports = db;

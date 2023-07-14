@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Drink } from '../../models/drink.model.js';
+import { Drink } from '../../../../backend/models/drink.model.js';
 
 const baseURl = 'http://localhost:8080/api/drinks';
 

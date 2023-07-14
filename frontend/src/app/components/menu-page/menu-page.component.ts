@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DrinkService } from '../../services/drink.service';
-import { Drink } from '../../../models/drink.model';
+import { Drink } from '../../../../../backend/models/drink.model';
 
 @Component({
   selector: 'app-menu-page',

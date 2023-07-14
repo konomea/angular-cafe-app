@@ -15,7 +15,7 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-const db = require("./src/models");
+const db = require("./models");
 db.sequelize.sync()
   .then(() => {
     console.log("Synced db.");
@@ -24,7 +24,7 @@ db.sequelize.sync()
     console.log("Failed to sync db: " + err.message);
   });
 
-//   // not sure about this line
+//  for development only
 // db.sequelize.sync({ force: true }).then(() => {
 //   console.log("Drop and re-sync db.");
 // });
@@ -32,10 +32,10 @@ db.sequelize.sync()
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Elsa's application." });
+  res.json({ message: "Node express server for database interactions and api requests." });
 });
 
-require("./src/routes/drink.routes")(app);
+require("./routes/drink.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
