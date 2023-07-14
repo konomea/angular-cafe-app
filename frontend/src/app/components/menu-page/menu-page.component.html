@@ -1,8 +1,8 @@
 <div class="component-container">
-    <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-4 gap-3">
-        <div class="bg-cream col-span-2 md:col-span-1">first</div>
-        <div class="bg-brown col-span-2">
-            <table>
+    <div class="grid grid-cols-12 gap-3">
+        <div class="my-5 bg-cream/75 rounded-r-lg col-span-12 md:col-span-1">first</div>
+        <div class="my-5 bg-slate-900/75 rounded-l-lg col-span-12 md:col-span-5  md:col-end-13">
+            <!-- <table>
                 <tr>
                     <th>Drink Name</th>
                     <th>Price</th>
@@ -20,7 +20,10 @@
                     <td><img src="{{'../../../assets/images/' + drink.image}}" alt=""></td>
                     
                 </tr>
-            </table>
+            </table> -->
+            <div class="grid gird-flow-row-dense grid-cols-2 lg:grid-cols-3 m-5">
+                <app-card *ngFor="let drink of drinks" [data]="drink" class="m-2"></app-card>
+            </div>
         </div>
     </div>
 </div>

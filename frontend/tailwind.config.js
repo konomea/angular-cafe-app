@@ -14,6 +14,9 @@ module.exports = {
         'purple': '#460B5B'
       }
     },
+    fontFamily: {
+      'pixel': ['VT323', 'monospace']
+    }
   },
   plugins: [],
 }

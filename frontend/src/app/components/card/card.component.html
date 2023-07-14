@@ -1,0 +1,6 @@
+<div class="rounded-xl relative items-center" (mouseover)="hover=true" (mouseleave)="hover=false">
+    <img [ngClass]="hover ? 'blur' : ''" class="rounded-full object-cover" src="{{'../../../assets/images/' + data.image}}" alt="{{data.name}}">
+    <h2 *ngIf="hover" class="absolute card-hover top-20 font-pixel ">
+        {{data.name}}
+    </h2>
+</div>
