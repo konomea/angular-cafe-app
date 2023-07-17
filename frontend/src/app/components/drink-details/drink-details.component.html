@@ -1,14 +1,9 @@
-<p class="font-pixel text-6xl">drink-details works!</p>
-<div>
+<div class="font-pixel text-3xl">
     <div *ngIf="currentDrink.id">
       <h4>{{currentDrink.name}}</h4>
-      <p>{{currentDrink.price}} <br>
+      {{currentDrink.price}} <br>
         {{ currentDrink.featured ? "Featured!" : "" }} <br>
         {{currentDrink.tags}}
-      </p>
-
-        
       <p>{{ message }}</p>
     </div>
-  
   </div>

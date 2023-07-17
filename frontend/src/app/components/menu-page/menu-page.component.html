@@ -1,19 +1,19 @@
 <div class="component-container">
     <div class="grid grid-cols-12 gap-3">
-        <div class="my-5 bg-cream/75 rounded-r-lg col-span-12 md:col-span-1">first</div>
+        <!-- <div class="my-5 bg-cream/75 rounded-r-lg col-span-12 md:col-span-1">first</div> -->
 
-        <div class="bg-cream rounded-lg col-span-3" *ngIf="currentDrink">
+        <div class="rounded-lg col-span-3 col-start-5 my-5 bg-cream" *ngIf="currentDrink.id">
             <app-drink-details [viewMode]="true" [currentDrink]="currentDrink"></app-drink-details>
         </div>
 
-        <div class="my-5 bg-slate-900/75 rounded-l-lg col-span-12 md:col-span-5  md:col-end-13">
+        <div class="my-5 bg-slate-900/50 rounded-l-lg col-span-12 md:col-span-5  md:col-end-13">
 
             <div class="input-group mb-3">
                 <input type="text" class="form-control" type="text" placeholder="Search by Name" [(ngModel)]="name">
                 <div class="input-group-append" type="button" (click)="searchName()">Go</div>
             </div>
 
-            <div class="grid gird-flow-row-dense grid-cols-2 lg:grid-cols-3 m-5 list-group">
+            <div class="grid grid-cols-2 lg:grid-cols-3 m-5 list-group">
                 <li class="list-group-item" *ngFor="let drink of drinks; let i = index" [class.active]="i == currentIndex" (click)="setActiveDrink(drink, i)"> 
                     <div class="rounded-xl relative items-center group">
                         <img class="rounded-full object-cover group-hover:blur-sm" src="{{'../../../assets/images/' + drink.image}}" alt="{{drink.name}}">
