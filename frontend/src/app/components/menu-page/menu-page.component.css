@@ -7,15 +7,15 @@
     background-attachment: fixed;
 }
 
-.card-container {
-    flex-direction: row;
-    flex-wrap: wrap;
+.card-hover {
+    text-align: center;
+    width: 100%;
 }
 
-.card-large {
-    width: 45%;
-}
-
-.card-small {
-    width: 90%;
+.blur{
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
 }

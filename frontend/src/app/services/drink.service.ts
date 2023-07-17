@@ -20,6 +20,10 @@ export class DrinkService {
     return this.http.get<Drink[]>(`${baseURl}?name=${name}`);
   }
 
+  findById(id: number): Observable<Drink> {
+    return this.http.get<Drink>(`${baseURl}/${id}`);
+  }
+
   findFeatured(): Observable<Drink[]> {
     return this.http.get<Drink[]>(`${baseURl}?featured=true`);
   }

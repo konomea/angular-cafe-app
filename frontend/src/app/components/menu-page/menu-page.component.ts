@@ -46,14 +46,13 @@ export class MenuPageComponent implements OnInit {
     this.currentDrink = {};
     this.currentIndex = -1;
 
-    this.drinkService.findByName(this.name).subscribe(
-      data => {
+    this.drinkService.findByName(this.name).subscribe({
+      next: data => {
         this.drinks = data;
         console.log(data);
       },
-      error => {
-        console.log(error);
-      });
+      error: (e) => console.error(e)
+    });
   }
 }
 

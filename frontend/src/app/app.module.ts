@@ -6,20 +6,22 @@ import { AppComponent } from './app.component';
 import { MenuPageComponent } from './components/menu-page/menu-page.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { NavComponent } from './components/nav/nav.component';
-import { CardComponent } from './components/card/card.component';
+import { DrinkDetailsComponent } from './components/drink-details/drink-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuPageComponent,
     NavComponent,
-    CardComponent
+    DrinkDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

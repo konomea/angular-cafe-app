@@ -1,28 +1,27 @@
 <div class="component-container">
     <div class="grid grid-cols-12 gap-3">
         <div class="my-5 bg-cream/75 rounded-r-lg col-span-12 md:col-span-1">first</div>
+
+        <div class="bg-cream rounded-lg col-span-3" *ngIf="currentDrink">
+            <app-drink-details [viewMode]="true" [currentDrink]="currentDrink"></app-drink-details>
+        </div>
+
         <div class="my-5 bg-slate-900/75 rounded-l-lg col-span-12 md:col-span-5  md:col-end-13">
-            <!-- <table>
-                <tr>
-                    <th>Drink Name</th>
-                    <th>Price</th>
-                    <th>Life Effect</th>
-                    <th>Tags</th>
-                    <th>Featured</th>
-                    <th>Image</th>
-                </tr>
-                <tr *ngFor="let drink of drinks">
-                    <td>{{drink.name}}</td>
-                    <td>{{drink.price}}</td>
-                    <td>{{drink.life_effect}}</td>
-                    <td>{{drink.tags}}</td>
-                    <td>{{drink.featured}}</td>
-                    <td><img src="{{'../../../assets/images/' + drink.image}}" alt=""></td>
-                    
-                </tr>
-            </table> -->
-            <div class="grid gird-flow-row-dense grid-cols-2 lg:grid-cols-3 m-5">
-                <app-card *ngFor="let drink of drinks" [data]="drink" class="m-2"></app-card>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" type="text" placeholder="Search by Name" [(ngModel)]="name">
+                <div class="input-group-append" type="button" (click)="searchName()">Go</div>
+            </div>
+
+            <div class="grid gird-flow-row-dense grid-cols-2 lg:grid-cols-3 m-5 list-group">
+                <li class="list-group-item" *ngFor="let drink of drinks; let i = index" [class.active]="i == currentIndex" (click)="setActiveDrink(drink, i)"> 
+                    <div class="rounded-xl relative items-center group">
+                        <img class="rounded-full object-cover group-hover:blur-sm" src="{{'../../../assets/images/' + drink.image}}" alt="{{drink.name}}">
+                        <h2 class="hidden group-hover:block absolute card-hover top-20 font-pixel">
+                            {{drink.name}}
+                        </h2>
+                    </div>
+                </li>
             </div>
         </div>
     </div>
