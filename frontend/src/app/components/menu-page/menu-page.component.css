@@ -10,5 +10,11 @@
 .card-hover {
     text-align: center;
     width: 100%;
-    font-size: larger;
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

@@ -16,10 +16,13 @@
             <div class="grid grid-cols-2 lg:grid-cols-3 m-5 list-group">
                 <li class="list-group-item" *ngFor="let drink of drinks; let i = index" [class.active]="i == currentIndex" (click)="setActiveDrink(drink, i)"> 
                     <div class="rounded-xl relative items-center group">
-                        <img class="rounded-full object-cover group-hover:blur-sm" src="{{'../../../assets/images/' + drink.image}}" alt="{{drink.name}}">
-                        <h2 class="hidden group-hover:block absolute card-hover top-20 font-pixel">
-                            {{drink.name}}
-                        </h2>
+                        <div>
+                            <img class="rounded-full object-cover group-hover:blur-sm" src="{{'../../../assets/images/' + drink.image}}" alt="{{drink.name}}">
+                            <h2 class="hidden group-hover:block absolute card-hover font-pixel text-2xl center-text">
+                                {{drink.name}}
+                            </h2>  
+                        </div>
+                        
                     </div>
                 </li>
             </div>
