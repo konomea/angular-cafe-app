@@ -13,7 +13,7 @@
                 <div class="input-group-append" type="button" (click)="searchName()">Go</div>
             </div>
 
-            <div class="grid grid-cols-2 lg:grid-cols-3 m-5 list-group">
+            <div class="grid grid-cols-2 lg:grid-cols-3 m-5 list-group max-h-full">
                 <li class="list-group-item list-none" *ngFor="let drink of drinks; let i = index" [class.active]="i == currentIndex" (click)="setActiveDrink(drink, i)"> 
                     <div class="rounded-xl relative items-center group">
                         <div>

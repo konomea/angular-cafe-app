@@ -3,4 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css?family=VT323')
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+.component-container {
+    background-image: url("./assets/images/backdrop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-left: 4rem;
+    min-height: 100vh;
+    min-width: 100vw;
+}
