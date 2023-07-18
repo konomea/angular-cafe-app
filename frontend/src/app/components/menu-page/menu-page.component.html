@@ -1,9 +1,14 @@
 <div class="component-container">
+
+    <div class="alert border bg-dark-pink rounded-xl text-brown px-4 py-3" *ngIf="showAlert">
+        Added to Bag
+    </div>
+
     <div class="grid grid-cols-12 gap-3">
         <!-- <div class="my-5 bg-cream/75 rounded-r-lg col-span-12 md:col-span-1">first</div> -->
 
         <div class="rounded-lg col-span-3 col-start-5 my-5 bg-cream" *ngIf="currentDrink.id">
-            <app-drink-details [viewMode]="true" [currentDrink]="currentDrink"></app-drink-details>
+            <app-drink-details (sender)="receiver($event)" [viewMode]="true" [currentDrink]="currentDrink"></app-drink-details>
         </div>
 
         <div class="my-5 bg-slate-900/50 rounded-l-lg col-span-12 md:col-span-5  md:col-end-13">

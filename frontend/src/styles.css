@@ -14,3 +14,10 @@
     min-height: 100vh;
     min-width: 100vw;
 }
+
+.alert {
+    position: fixed;
+    left: 4rem;
+    bottom: 0;
+    z-index: 9999;
+}

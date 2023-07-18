@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DrinkService } from '../../services/drink.service';
+import { CartService } from '../../services/cart.service';
+
 import { Drink } from '../../../../../backend/models/drink.model';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,14 +21,16 @@ export class DrinkDetailsComponent implements OnInit {
     life_effect: 0,
     tags: [],
   };
-  message = '';
+  @Output() sender = new EventEmitter();
 
   constructor(
-    private drinkService: DrinkService, private route: ActivatedRoute) { }
+    private drinkService: DrinkService, 
+    private route: ActivatedRoute,
+    private cartService: CartService
+    ) { }
 
   ngOnInit(): void {
     if(!this.viewMode){
-      this.message = '';
       this.getDrink(this.route.snapshot.params['id']);
     }
   }
@@ -42,4 +46,14 @@ export class DrinkDetailsComponent implements OnInit {
       });
   }
 
+  addToCart(drink: Drink) : void {
+    this.cartService.addToCart(drink);
+    console.log(this.cartService.getItems())
+    this.sender.emit(true);
+    // window.alert(`${this.currentDrink.name} has been added to the cart!`);
+  }
+
+  closeAlert() : void {
+    this.sender.emit(false);
+  }
 }

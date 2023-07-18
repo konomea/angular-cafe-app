@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DrinkService } from '../../services/drink.service';
 import { Drink } from '../../../../../backend/models/drink.model';
+import { DrinkDetailsComponent } from '../drink-details/drink-details.component';
 
 @Component({
   selector: 'app-menu-page',
@@ -14,11 +15,17 @@ export class MenuPageComponent implements OnInit {
   currentDrink: Drink = {};
   currentIndex = -1;
   name = '';
+  showAlert: boolean = false;
 
   constructor(private drinkService: DrinkService) { }
 
   ngOnInit(): void {
     this.retrieveDrinks();
+  }
+
+  receiver(receivedFromChild: boolean) {
+    console.log(receivedFromChild);
+    this.showAlert = receivedFromChild;
   }
 
   retrieveDrinks(): void {

@@ -19,5 +19,9 @@ module.exports = {
     }
   },
   plugins: [],
+  safelist: [
+    'animate-fade-right',
+    'animate-ease-out',
+  ]
 }
 

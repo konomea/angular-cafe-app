@@ -1,3 +1,10 @@
-<div class="component-container">
-    <h1>CART WORKS</h1>
+<div class="component-container font-pixel">
+    <h1 class="text-4xl text-cream p-5">BAG</h1>
+    <div *ngFor="let item of items">
+        <div class="bg-cream/75 text-2xl p-5">
+            <span>{{item.name}} &emsp;</span>  
+            <span>{{item.price}}</span>
+        </div>
+        <br>
+    </div>
 </div>
