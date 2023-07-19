@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DrinkService } from '../../services/drink.service';
 import { Drink } from '../../../../../backend/models/drink.model';
-import { DrinkDetailsComponent } from '../drink-details/drink-details.component';
 
 @Component({
   selector: 'app-menu-page',
@@ -10,7 +9,7 @@ import { DrinkDetailsComponent } from '../drink-details/drink-details.component'
 })
 export class MenuPageComponent implements OnInit {
   
-  drinks?: Drink[];
+  drinks: Drink[] = [];
   errorMessage: string = '';
   currentDrink: Drink = {};
   currentIndex = -1;

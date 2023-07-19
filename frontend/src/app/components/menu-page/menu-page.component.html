@@ -1,4 +1,11 @@
-<div class="component-container">
+<div class="component-container font-pixel">
+    <div class="text-4xl p-5 top-0 left-16 md:absolute">
+        <h1 class="text-cream">SHOP</h1> <br>
+        <div class="input-group mb-3 text-xl">
+            <input type="text" class="form-control rounded-md text-purple text-center" type="text" placeholder="Search by Name" [(ngModel)]="name">
+            <button class="input-group-append px-3 mx-3 border rounded-lg text-light-pink" type="button" (click)="searchName()">Go</button>
+        </div>
+    </div> 
 
     <div class="alert border bg-dark-pink rounded-xl text-brown px-4 py-3" *ngIf="showAlert">
         Added to Bag
@@ -7,30 +14,27 @@
     <div class="grid grid-cols-12 gap-3">
         <!-- <div class="my-5 bg-cream/75 rounded-r-lg col-span-12 md:col-span-1">first</div> -->
 
-        <div class="rounded-lg col-span-3 col-start-5 my-5 bg-cream" *ngIf="currentDrink.id">
+        <div class="rounded-lg md:col-start-5 md:col-span-3 col-start-2 col-span-10 my-5 bg-cream" *ngIf="currentDrink.id">
             <app-drink-details (sender)="receiver($event)" [viewMode]="true" [currentDrink]="currentDrink"></app-drink-details>
         </div>
 
         <div class="my-5 bg-slate-900/50 rounded-l-lg col-span-12 md:col-span-5  md:col-end-13">
-
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" type="text" placeholder="Search by Name" [(ngModel)]="name">
-                <div class="input-group-append" type="button" (click)="searchName()">Go</div>
-            </div>
-
-            <div class="grid grid-cols-2 lg:grid-cols-3 m-5 list-group max-h-full">
+            <div class="grid grid-cols-2 lg:grid-cols-3 m-5 list-group max-h-full" *ngIf="drinks.length > 0">
                 <li class="list-group-item list-none" *ngFor="let drink of drinks; let i = index" [class.active]="i == currentIndex" (click)="setActiveDrink(drink, i)"> 
                     <div class="rounded-xl relative items-center group">
                         <div>
                             <img class="rounded-full object-cover group-hover:blur-sm" src="{{'../../../assets/images/' + drink.image}}" alt="{{drink.name}}">
-                            <h2 class="hidden group-hover:block absolute card-hover font-pixel text-2xl center-text">
+                            <h2 class="hidden group-hover:block absolute card-hover text-2xl center-text">
                                 {{drink.name}}
                             </h2>  
                         </div>
                         
                     </div>
-                </li>
+                </li> 
             </div>
+            <li *ngIf="!(drinks.length > 0)" class="list-none text-center py-5">
+                <h1 class="text-light-pink text-3xl">Nothing Found</h1>
+            </li>
         </div>
     </div>
 </div>
