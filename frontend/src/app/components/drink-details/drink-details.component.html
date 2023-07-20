@@ -1,9 +1,9 @@
-<div class="font-pixel text-xl md:text-3xl">
+<div class="font-pixel text-xl md:text-2xl text-center">
     <div *ngIf="currentDrink.id">
-      <h4 class="text-2xl text-center">{{currentDrink.name}}</h4>
+      <h4 class="text-3xl">{{currentDrink.name}}</h4>
         {{currentDrink.price}} &#13; {{ currentDrink.featured ? " | Featured!" : "" }}
-        <br>
-        <h4 class="text-xl text-center">TAGS:</h4>
+        <br><br>
+        <h4>TAGS:</h4>
         <span *ngFor="let tag of currentDrink.tags">|{{tag}}| </span>
         <!-- {{currentDrink.tags}} -->
 

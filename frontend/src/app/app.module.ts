@@ -12,6 +12,8 @@ import { DrinkDetailsComponent } from './components/drink-details/drink-details.
 import { CartComponent } from './components/cart/cart.component';
 import { HelpComponent } from './components/help/help.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,

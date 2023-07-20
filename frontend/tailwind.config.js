@@ -18,10 +18,8 @@ module.exports = {
       'pixel': ['VT323', 'monospace']
     }
   },
-  plugins: [],
-  safelist: [
-    'animate-fade-right',
-    'animate-ease-out',
-  ]
+  plugins: [
+    require('tailwindcss-animated')
+  ],
 }
 

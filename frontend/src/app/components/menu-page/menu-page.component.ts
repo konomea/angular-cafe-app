@@ -60,5 +60,9 @@ export class MenuPageComponent implements OnInit {
       error: (e) => console.error(e)
     });
   }
+
+  closeAlert() {
+    this.showAlert = false;
+  }
 }
 

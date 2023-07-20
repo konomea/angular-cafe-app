@@ -7,13 +7,15 @@
         </div>
     </div> 
 
-    <div class="alert border bg-dark-pink rounded-xl text-brown px-4 py-3" *ngIf="showAlert">
+    <!-- alert -->
+    <div *ngIf="showAlert" class="flex alert border bg-dark-pink rounded-xl text-brown p-2 m-4 animate-fade-right text-xl md:text-2xl">
         Added to Bag
+        <button (click)="closeAlert()" class="pl-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+        </button> 
     </div>
 
     <div class="grid grid-cols-12 gap-3">
-        <!-- <div class="my-5 bg-cream/75 rounded-r-lg col-span-12 md:col-span-1">first</div> -->
-
         <div class="rounded-lg md:col-start-5 md:col-span-3 col-start-2 col-span-10 my-5 bg-cream" *ngIf="currentDrink.id">
             <app-drink-details (sender)="receiver($event)" [viewMode]="true" [currentDrink]="currentDrink"></app-drink-details>
         </div>
@@ -32,6 +34,7 @@
                     </div>
                 </li> 
             </div>
+            <!-- no results message -->
             <li *ngIf="!(drinks.length > 0)" class="list-none text-center py-5">
                 <h1 class="text-light-pink text-3xl">Nothing Found</h1>
             </li>
