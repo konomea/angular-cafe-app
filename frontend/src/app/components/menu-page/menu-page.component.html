@@ -1,9 +1,16 @@
 <div class="component-container font-pixel">
     <div class="text-4xl p-5 top-0 left-16 md:absolute">
         <h1 class="text-cream">SHOP</h1> <br>
+
+        <!-- Search -->
         <div class="input-group mb-3 text-xl">
             <input type="text" class="form-control rounded-md text-purple text-center" type="text" placeholder="Search by Name" [(ngModel)]="name">
             <button class="input-group-append px-3 mx-3 border rounded-lg text-light-pink" type="button" (click)="searchName()">Go</button>
+        </div>
+
+        <div class="input-group mb-3 text-xl">
+            <input type="text" class="form-control rounded-md text-purple text-center" type="text" placeholder="Search by Tag" [(ngModel)]="tag">
+            <button class="input-group-append px-3 mx-3 border rounded-lg text-light-pink" type="button" (click)="searchTag()">Go</button>
         </div>
     </div> 
 

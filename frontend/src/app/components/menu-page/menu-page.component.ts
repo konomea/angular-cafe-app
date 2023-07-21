@@ -13,7 +13,8 @@ export class MenuPageComponent implements OnInit {
   errorMessage: string = '';
   currentDrink: Drink = {};
   currentIndex = -1;
-  name = '';
+  name: string = '';
+  tag: string = '';
   showAlert: boolean = false;
 
   constructor(private drinkService: DrinkService) { }
@@ -53,6 +54,19 @@ export class MenuPageComponent implements OnInit {
     this.currentIndex = -1;
 
     this.drinkService.findByName(this.name).subscribe({
+      next: data => {
+        this.drinks = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    });
+  }
+
+  searchTag(): void {
+    this.currentDrink = {};
+    this.currentIndex = -1;
+
+    this.drinkService.findTag(this.tag).subscribe({
       next: data => {
         this.drinks = data;
         console.log(data);

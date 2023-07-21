@@ -27,4 +27,8 @@ export class DrinkService {
   findFeatured(): Observable<Drink[]> {
     return this.http.get<Drink[]>(`${baseURl}?featured=true`);
   }
+
+  findTag(tag: string): Observable<Drink[]> {
+    return this.http.get<Drink[]>(`${baseURl}/tag/${tag}`);
+  }
 }

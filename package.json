@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ng2-search-filter": "^0.5.1",
     "pg": "^8.11.1",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.32.1",

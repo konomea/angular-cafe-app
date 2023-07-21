@@ -11,6 +11,8 @@ module.exports = app => {
   
     // Retrieve a single drink with id
     router.get("/:id", drinks.findOne);
+
+    router.get('/tag/:tag', drinks.findTag)
   
     app.use("/api/drinks", router);
   };
