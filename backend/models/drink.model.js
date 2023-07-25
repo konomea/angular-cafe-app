@@ -4,7 +4,11 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING
       },
       price: {
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
+        get() {
+          const value = this.getDataValue('price');
+          return value === null? null : parseFloat(value);
+        }
       },
       featured: {
         type: Sequelize.BOOLEAN

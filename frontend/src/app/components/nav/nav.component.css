@@ -1,0 +1,24 @@
+
+.item {
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+/* 
+.item:after {
+    content:(attr(value));
+    left: 12px;
+    top: -12px;
+    border-radius: 50%;
+    line-height: 80%;
+    padding:1px 5px;
+    background-color: white;
+    color: indigo;
+    font-size: 20px;
+    border-radius: 50%;
+    position: relative;
+} */

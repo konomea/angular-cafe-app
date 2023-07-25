@@ -21,4 +21,8 @@ export class CartService {
     this.items = [];
     return this.items;
   }
+
+  getTotalPrice() : number {
+    return this.items.reduce((sum: number, current) => sum += (current.price ?? 0), 0);
+  }
 }

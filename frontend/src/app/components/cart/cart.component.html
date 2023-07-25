@@ -1,10 +1,20 @@
 <div class="component-container font-pixel">
     <h1 class="text-4xl text-cream p-5">BAG</h1>
+    <div class="flex gap-x-1 text-light-pink text-xl pl-2">
+        <span><button class="border rounded-lg p-2"><a routerLink="/menu" class="border-spacing-1 rounded-lg">CONTINUE</a></button></span>
+        <span><button class="border rounded-lg p-2" *ngIf="items?.length" (click)="clearCart()">CLEAR BAG</button></span>
+    </div>
+    
     <div *ngFor="let item of items">
         <div class="bg-cream/75 text-2xl p-5">
             <span>{{item.name | uppercase}} &emsp;</span>  
-            <span>{{item.price}}</span>
+            <span>{{item.price | currency: 'CAD'}}</span>
         </div>
         <br>
     </div>
+
+    <div *ngIf="items?.length" class="bg-cream/75 text-2xl p-5 flex justify-end gap-x-1">
+        <span>TOTAL</span>  
+        <span>{{totalPrice | currency:'CAD':'symbol'}}</span>
+    </div> 
 </div>
